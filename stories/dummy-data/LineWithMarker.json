@@ -1,0 +1,70 @@
+{
+    "chartCategories": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug"
+    ],
+    "chartSeries": [
+        {
+            "name": "P",
+            "data": [
+                    240000,
+                    {
+                      "marker": {
+                          "enabled": true,
+                          "radius": 8,
+                          "fillColor": "#F47500",
+                          "lineColor": "#e1e1e1",
+                          "lineWidth": 6
+                      },
+                      "y": 250000
+                    },
+                    190000,
+                    160000,
+                    150000,
+                    {
+                      "marker": {
+                          "enabled": true,
+                          "radius": 8,
+                          "fillColor": "#a54700",
+                          "lineColor": "#e1e1e1",
+                          "lineWidth": 6
+                      },
+                      "y": 140000
+                    },
+                    142000,
+                    148000
+            ]
+        }, {
+            "name": "M",
+            "data": [
+                    180000,
+                    160000,
+                    170000,
+                    190000,
+                    180000,
+                    170000,
+                    160000,
+                    180000
+            ]
+        }, {
+            "name": "SM",
+            "data": [
+                    160000,
+                    170000,
+                    180000,
+                    185000,
+                    182000,
+                    178000,
+                    175000,
+                    180000
+            ]
+        }
+
+    ]
+}

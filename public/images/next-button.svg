@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+    <defs>
+        <path id="prefix__a" d="M4.478 7.79L.095 4.132c-.127-.108-.127-.286 0-.393L4.478.08c.126-.107.337-.107.464 0l.463.393c.127.107.127.285 0 .393L1.928 3.739c-.126.107-.126.285 0 .393l3.435 2.873c.126.107.126.286 0 .393l-.464.392c-.105.09-.295.09-.421 0z"/>
+        <path id="prefix__c" d="M12.335 14.862l-4.383-3.659c-.126-.107-.126-.286 0-.393l4.383-3.658c.127-.107.337-.107.464 0l.463.392c.127.107.127.286 0 .393L9.785 10.81c-.126.107-.126.286 0 .393l3.435 2.873c.127.107.127.286 0 .393l-.463.393c-.106.089-.295.089-.422 0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 22 0)">
+        <circle cx="11" cy="11" r="10.5" stroke="#000"/>
+        <g transform="translate(7.857 7.071)">
+            <mask id="prefix__b" fill="#fff">
+                <use xlink:href="#prefix__a"/>
+            </mask>
+            <use fill="#000" xlink:href="#prefix__a"/>
+            <g mask="url(#prefix__b)">
+                <g transform="translate(-7.857 -7.071)">
+                    <circle cx="11" cy="11" r="10.5" stroke="#000"/>
+                    <use fill="#000" xlink:href="#prefix__c"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  react-starter-dev:
+    image: react-starter-dev:latest
+    build:
+      context: ./../..
+      dockerfile: ./scripts/docker/Dockerfile.dev
+    container_name: "react-starter-dev"
+    env_file:
+      - ./../../.env
+    working_dir: /usr/src/app
+    volumes:
+      - ./../../:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3000:3000"

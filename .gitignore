@@ -1,0 +1,14 @@
+# Auto-generated folders
+coverage
+build
+dist
+node_modules
+
+# Logs
+yarn-error.log*
+
+# dotenv environment variables file
+.env
+
+# Mac files
+.DS_Store

@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  react-starter-test:
+    image: react-starter-test:latest
+    build:
+      context: ./../..
+      dockerfile: ./scripts/docker/Dockerfile.test
+    container_name: "react-starter-test"
+    volumes:
+    - ./../../coverage:/usr/src/app/coverage
+    env_file:
+      - ./../../.env

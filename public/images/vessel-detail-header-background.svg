@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="760" height="60" viewBox="0 0 760 60">
+    <defs>
+        <linearGradient id="prefix__b" x1="26.541%" x2="99.053%" y1="49.639%" y2="49.786%">
+            <stop offset="0%" stop-color="#EA1E23"/>
+            <stop offset="100%" stop-color="#7A0000"/>
+        </linearGradient>
+        <linearGradient id="prefix__d" x1="26.541%" x2="99.053%" y1="49.639%" y2="49.786%">
+            <stop offset="0%" stop-color="#EA1E23"/>
+            <stop offset="100%" stop-color="#7A0000"/>
+        </linearGradient>
+        <path id="prefix__a" d="M4 0h752c2.21 0 4 1.79 4 4v56H0V4c0-2.21 1.79-4 4-4z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="prefix__c" fill="#fff">
+            <use xlink:href="#prefix__a"/>
+        </mask>
+        <use fill="#1E1C4B" fill-rule="nonzero" xlink:href="#prefix__a"/>
+        <ellipse cx="843" cy="87.5" fill="url(#prefix__b)" mask="url(#prefix__c)" opacity=".398" rx="358" ry="62.5"/>
+        <ellipse cx="782" cy="-13.5" fill="url(#prefix__d)" mask="url(#prefix__c)" opacity=".303" rx="438" ry="76.5"/>
+    </g>
+</svg>

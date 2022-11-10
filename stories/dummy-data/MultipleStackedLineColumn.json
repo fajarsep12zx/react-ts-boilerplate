@@ -1,0 +1,109 @@
+{
+    "chartCategories": [
+                    "Jan", 
+                    "Feb", 
+                    "Mar", 
+                    "Apr", 
+                    "May", 
+                    "Jun",
+                    "Jul", 
+                    "Aug",
+                    "Sep", 
+                    "Okt", 
+                    "Nov", 
+                    "Dec"
+    ],
+    "chartSeries": [
+        {
+            "name": "Coal-Plan",
+            "type": "column",
+            "stack": "coal",
+            "data": [
+                    1.4,
+                    3,
+                    3.1,
+                    4,
+                    4.1,
+                    1.4,
+                    3,
+                    3.1,
+                    4,
+                    4.1,
+                    1.4,
+                    3
+            ]
+        }, {
+            "name": "Coal-Actual",
+            "type": "column",
+            "stack": "coal",
+            "data": [
+                    1.1,
+                    2,
+                    2.5,
+                    1.5,
+                    2.5,
+                    1.1,
+                    2,
+                    2.5,
+                    1.5,
+                    2.5,
+                    1.1,
+                    2
+            ]
+        }, {
+            "name": "Overburden-Plan",
+            "type": "column",
+            "stack": "overburden",
+            "data": [
+                    2.4,
+                    4,
+                    4.1,
+                    5,
+                    5.1,
+                    2.4,
+                    4,
+                    4.1,
+                    5,
+                    5.1,
+                    2.4,
+                    4
+            ]
+        }, {
+            "name": "Overburden-Actual",
+            "type": "column",
+            "stack": "overburden",
+            "data": [
+                    2.1,
+                    3,
+                    3.5,
+                    2.5,
+                    3.5,
+                    2.1,
+                    3,
+                    3.5,
+                    2.5,
+                    3.5,
+                    2.1,
+                    3
+            ]
+        } , {
+            "name": "Stripping Ratio",
+            "type": "spline",
+            "stack": "overburden",
+            "data": [
+                    3,
+                    2.67,
+                    3,
+                    6.33,
+                    3.33,
+                    3,
+                    2.67,
+                    3,
+                    6.33,
+                    3.33,
+                    3,
+                    2.67
+            ]
+        }
+    ]
+}

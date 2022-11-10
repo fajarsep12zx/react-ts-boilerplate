@@ -1,0 +1,29 @@
+{
+    "chartCategories": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+    ],
+    "chartSeries": [
+        {
+            "name": "On Barge",
+            "data": [
+                890, 860, 900, 910, 930, 885, 851, 888, 905, 900, 890, 875
+            ]
+        }, {
+            "name": "On Vessel",
+            "data": [
+                930, 905, 920, 900, 910, 915, 885, 905, 925, 920, 940, 950
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  react-starter-storybook:
+    image: react-starter-storybook:latest
+    build:
+      context: ./../..
+      dockerfile: ./scripts/docker/Dockerfile.storybook
+    container_name: "react-starter-storybook"
+    env_file:
+      - ./../../.env
+    working_dir: /usr/src/app
+    ports:
+      - "3001:80"

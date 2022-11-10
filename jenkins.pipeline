@@ -1,0 +1,40 @@
+def BUCKET_NAME = ''
+def TEAMS_URL = ''
+def GITHUB_REPO = 'https://github.com/zebraxid/react-starter.git'
+def DISTRIBUTION_ID = ''
+
+node {
+   stage('Clone'){
+       checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CloneOption', depth: 2, noTags: true, reference: '', shallow: true]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github', url: GITHUB_REPO]]])
+   }
+   script{
+       echo 'This is FrontEnd, lets Deploy'
+            stage('Build'){
+                sh label: '', script: '''
+                cd $JENKINS_HOME/workspace/react-starter
+                echo NODE_ENV=${NODE_ENV} > .env
+                echo APP_NAME=${APP_NAME} >> .env
+                echo GRAPHQL_HOST=${GRAPHQL_HOST} >> .env
+                echo MAPS_API_KEY=${MAPS_API_KEY} >> .env
+                echo SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN} >> .env
+                echo SENTRY_ORG=${SENTRY_ORG} >> .env
+                echo SENTRY_PROJECT=${SENTRY_PROJECT} >> .env
+                echo SENTRY_DSN=${SENTRY_DSN} >> .env
+                echo SENTRY_ENVIRONMENT=${SENTRY_ENVIRONMENT} >> .env
+                yarn install --production=false
+                yarn build
+                '''
+            }
+            stage('Upload to S3 and invalidate Cloudfront cache'){
+                withAWS(credentials: 'devops', region: 'ap-southeast-1') {
+                    s3Delete(bucket: BUCKET_NAME, path:'/')
+                    s3Upload(bucket: BUCKET_NAME, workingDir:'dist', includePathPattern:'**/*')
+                    cfInvalidate(distribution: DISTRIBUTION_ID, paths:['/*'])
+                }
+            }
+            office365ConnectorSend message: 'Deploy ZebraX React Starter DEV finished', status:'Deploy Finished', webhookUrl:TEAMS_URL
+    }
+    stage('Cleaning up workspace'){
+       cleanWs()
+   }
+}

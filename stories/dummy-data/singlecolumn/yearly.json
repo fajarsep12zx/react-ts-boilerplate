@@ -1,0 +1,36 @@
+{
+    "chartCategories": [
+                        "Jan", 
+                        "Feb", 
+                        "Mar", 
+                        "Apr", 
+                        "May", 
+                        "Jun",
+                        "Jul", 
+                        "Aug",
+                        "Sep", 
+                        "Okt", 
+                        "Nov", 
+                        "Dec"
+    ],
+    "chartSeries": [
+        {
+            "name": "Data",
+            "type": "column",
+            "data": [ 
+                        44,
+                        55, 
+                        41, 
+                        67, 
+                        22, 
+                        43, 
+                        21, 
+                        49,
+                        44,
+                        55, 
+                        41, 
+                        67
+            ]
+        }
+    ]
+}

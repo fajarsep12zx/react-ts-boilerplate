@@ -1,0 +1,31 @@
+def BITBUCKET_REPO = 'https://github.com/zebraxid/react-starter'
+
+node {
+    stage('Init') {
+        def dockerHome = tool 'docker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
+    stage('Clone') {
+        git branch: '${PR_BRANCH}', credentialsId: 'titusprasetyo', url: BITBUCKET_REPO
+    }
+    stage('Running Unit Test'){
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+          sh label: '', script: '''
+          cd $JENKINS_HOME/workspace/mbss-ctfront-test
+          echo NODE_ENV=${NODE_ENV} > .env
+          echo APP_NAME=${APP_NAME} >> .env
+          echo GRAPHQL_HOST=${GRAPHQL_HOST} >> .env
+          yarn docker:build-test
+          docker-compose -f scripts/docker/docker-compose.test.yaml run --rm react-starter-test
+          '''
+
+          publishCoverage adapters: [istanbulCoberturaAdapter('**/coverage/cobertura-coverage.xml')], sourceFileResolver: sourceFiles('STORE_ALL_BUILD')
+        }
+    }
+    stage('Cleanup') {
+      sh '''
+      sudo docker rmi -f $(sudo docker images | grep react-starter-test | awk '{print $1,$3}' | grep -v IMAGE | grep -v golang | grep -v node | awk '{print $2}')
+      '''
+      cleanWs()
+    }
+}
